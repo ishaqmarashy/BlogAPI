@@ -49,6 +49,8 @@ router.post('/',async (req, res)=>{
     });}
   else {
     debug(`${req.url} got post of username:${username} password:${password} db check failed`);
+    res.status(401).json({
+      message: "Auth Failed"})
   }
 });
 
@@ -145,7 +147,6 @@ router.get("/post",async (req,res)=>{
 router.put("/post",async (req,res)=>{
   const {title,text,date}= req.body;
   const{currentUser}=res.locals;
-  console.log(req.body)
   let nDate;
   if (date)
     nDate=new Date(date);
