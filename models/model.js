@@ -1,6 +1,6 @@
 const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
-const mongoDb =`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASS}@test-server.dduiwsv.mongodb.net/`;
+const mongoDb =process.env.MONGO_CON;
 const jwt = require('jsonwebtoken');
 const debug=require('debug')('model');
 
